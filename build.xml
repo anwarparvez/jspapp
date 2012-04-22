@@ -13,6 +13,7 @@
     <property name="lib.dir" value="${basedir}/lib"/>
     <property name="props.dir" value="${basedir}/props"/>
     <property name="i18n.dir" value="${basedir}/i18n"/>
+    <property name="db.dir" value="${basedir}/db"/>
 
     <property name="tomcat.lib" value="${tomcat.home}/lib"/>
 
@@ -46,6 +47,7 @@
         </copy>
 
         <copy todir="${classes.dir}">
+            <fileset dir="${db.dir}"/>
             <fileset dir="${props.dir}"/>
             <fileset dir="${i18n.dir}"/>
         </copy>

@@ -22,8 +22,12 @@
       <root url="jar:///usr/local/apache-tomcat-6.0.35/lib/catalina.jar!/" />
       <root url="jar:///usr/local/apache-tomcat-6.0.35/lib/jasper-el.jar!/" />
       <root url="jar:///usr/local/apache-tomcat-6.0.35/lib/ecj-3.7.jar!/" />
+      <root url="file:///usr/local/tomcat6/lib" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file:///usr/local/tomcat6/lib" recursive="false" />
   </library>
 </component>
