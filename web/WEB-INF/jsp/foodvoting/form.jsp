@@ -6,16 +6,18 @@
 <body>
 <form method="post" action="foodrating">
     <fieldset>
-        <legend>
-            <label><h1>Select Food</h1></label>
-            <select name="food_id">
-                <c:forEach var="food" items="${foodList}">
-                    <option><c:out value="${food.foodName}"/></option>
-                </c:forEach>
+        <legend><h2>Food Voting </h2></legend>
 
-            </select>
-            <input type="submit" value="vote">
-        </legend>
+        <label>Select Food</label>
+        <select name="food_id">
+            <c:forEach var="food" items="${foodList}">
+                <option value="${food.foodId}"><c:out value="${food.foodName}"/></option>
+            </c:forEach>
+
+        </select>
+        <br>
+        <input type="submit" value="vote">
+
     </fieldset>
 </form>
 </body>

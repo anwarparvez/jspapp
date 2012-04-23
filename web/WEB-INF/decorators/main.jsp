@@ -36,9 +36,6 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Email Us</a></li>
-                    <c:if test="${user==null}">
-
-                    </c:if>
                     <c:choose>
                         <c:when test="${user==null}">
                             <li><a href="login">Log In</a></li>

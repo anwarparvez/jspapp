@@ -22,12 +22,35 @@
         <filter-name>loginFilter</filter-name>
         <filter-class>net.therap.filter.LoginFilter</filter-class>
     </filter>
+        <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>net.therap.filter.AdminFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>votingFilter</filter-name>
+        <filter-class>net.therap.filter.VotingFilter</filter-class>
+    </filter>
+
 
     <!-- Put the URL pattern what you want to protect-->
 
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
         <servlet-name>user</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <servlet-name>FoodVotingController</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <servlet-name>FoodVotingController</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>votingFilter</filter-name>
+        <servlet-name>FoodVotingController</servlet-name>
     </filter-mapping>
 
     <servlet>
@@ -45,11 +68,11 @@
         <servlet-class>net.therap.controller.UserController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>FoodRatingController</servlet-name>
-        <servlet-class>net.therap.controller.FoodRatingController</servlet-class>
+        <servlet-name>FoodVotingController</servlet-name>
+        <servlet-class>net.therap.controller.FoodVotingController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FoodRatingController</servlet-name>
+        <servlet-name>FoodVotingController</servlet-name>
         <url-pattern>/foodrating</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
