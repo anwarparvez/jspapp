@@ -28,8 +28,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
     <jarDirectory url="file:///usr/local/tomcat6/lib" recursive="false" />
     <jarDirectory url="file://C:/Java/apache-tomcat-7.0.26/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
   </library>
 </component>

@@ -8,7 +8,7 @@
 <head>
     <title><decorator:title default="INTRANET"/></title>
     <decorator:head/>
-
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <style type="text/css">
         div.foot {
@@ -23,10 +23,64 @@
 </head>
 
 <body bgcolor="#F5FFFF">
+<div class="main">
+    <div class="page">
+        <div class="header">
+            <div class="header-img"><img src="images/header.jpg" alt="" height="170"
+                                         width="800"></div>
+            <div class="topmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Email Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="leftpanel">
+                <h2>Main Menu</h2>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                    <li><a href="#">Link 6</a></li>
+                    <li><a href="#">Link 7</a></li>
+                    <li><a href="#">Link 8</a></li>
+                    <li><a href="#">Link 9</a></li>
+                    <li><a href="#">Link 10</a></li>
+                </ul>
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                    <li><a href="#">Link 6</a></li>
+                    <li><a href="#">Link 7</a></li>
+                    <li><a href="#">Link 8</a></li>
+                    <li><a href="#">Link 9</a></li>
+                    <li><a href="#">Link 10</a></li>
+                </ul>
+            </div>
+            <div class="rightpanel">
+                <div class="rightbody">
+                    <h1 class="title">Welcome to our website</h1>
+                      <decorator:body/>
 
-<decorator:body/>
+                </div>
+            </div>
+        </div>
 
-<%@ include file="footer.jsp" %>
+        <%@ include file="footer.jsp" %>
+    </div>
+</div>
+
+
 
 </body>
 

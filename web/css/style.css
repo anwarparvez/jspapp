@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    background-image: url(../images/bg.jpg);
+    background-repeat: repeat;
+    margin: 30px 0px 0px 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main {
+    width: 840px;
+    margin: 0px auto;
+}
+
+.page {
+    background-color: #FFFFFF;
+    width: 800px;
+    float: left;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+
+.header, .header-img {
+    width: 800px;
+    float: left;
+}
+
+.topmenu {
+    background-color: #000000;
+    width: 800px;
+    height: 50px;
+    float: left;
+}
+
+.topmenu ul {
+    height: 15px;
+    margin: 18px 0px 0px 20px;
+    list-style-type: none;
+}
+
+.topmenu ul li {
+    background-image: url(../images/bullet.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    height: 15px;
+    float: left;
+    padding-left: 14px;
+    margin-right: 31px;
+}
+
+.topmenu ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: normal;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.topmenu ul li a:hover {
+    color: #23b14d;
+}
+
+.content {
+    width: 800px;
+    float: left;
+}
+
+.leftpanel {
+    background-color: #ededed;
+    width: 220px;
+    float: left;
+    padding: 25px 20px;
+    margin-right: -260px;
+    position: relative;
+}
+
+.leftpanel h2 {
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #000000;
+    padding-bottom: 5px;
+    margin-bottom: 17px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #cccccc;
+}
+
+.leftpanel ul {
+    margin-bottom: 22px;
+    list-style-type: none;
+}
+
+.leftpanel ul li {
+    margin-bottom: 5px;
+}
+
+.leftpanel ul li a {
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.leftpanel ul li a:hover {
+    color: #23b14d;
+}
+
+.rightpanel {
+    width: 540px;
+    float: left;
+    border-left: solid 260px #eaeff3;
+}
+
+.rightbody {
+    text-align: justify;
+    width: 480px;
+    float: left;
+    padding: 25px 0px 25px 40px;
+}
+
+.rightbody strong {
+    color: #000000;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #000000;
+    padding-bottom: 5px;
+    margin-bottom: 17px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #cccccc;
+}
+
+.footer {
+    background-image: url(../images/footer.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 800px;
+    height: 77px;
+    float: left;
+}
+
+.footer p {
+    font-size: 11px;
+    line-height: 57px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+}

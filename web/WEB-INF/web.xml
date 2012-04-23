@@ -26,10 +26,10 @@
 
     <!-- Put the URL pattern what you want to protect-->
 
-    <!--filter-mapping>
-        <filter-name>loginFilter</filter-name>
-        <servlet-name>app</servlet-name>
-    </filter-mapping-->
+         <filter-mapping>
+             <filter-name>loginFilter</filter-name>
+             <servlet-name>user</servlet-name>
+         </filter-mapping>
 
     <servlet>
         <servlet-name>login</servlet-name>

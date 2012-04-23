@@ -22,7 +22,7 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
 
         HttpSession session = ((HttpServletRequest)request).getSession(false);
-        if (session == null || session.getAttribute("USER") == null) {
+        if (session == null || session.getAttribute("user") == null) {
             log.debug("user is not logged in");
             RequestDispatcher rd = request.getRequestDispatcher("/login");
             rd.forward(request, response);
