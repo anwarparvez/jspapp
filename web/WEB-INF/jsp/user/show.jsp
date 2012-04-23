@@ -5,6 +5,11 @@
 <head><title>
 <fmt:message key="user.show"/></title></head>
 <body>
+<jsp:useBean id="user" class="net.therap.domain.User" scope="session" />
+<jsp:getProperty name="user" property="userName" />
+<c:forEach var="food" items="${foodList}">
+    <c:out value="${food.foodName}"/>
+</c:forEach>
     <table>
         <tr>
             <td>

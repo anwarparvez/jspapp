@@ -3,11 +3,10 @@
 <web-app version="2.4"
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" >
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 
-
-                 <!-- Sitemesh Filter -->
+    <!-- Sitemesh Filter -->
 
     <filter>
         <filter-name>sitemesh</filter-name>
@@ -26,10 +25,10 @@
 
     <!-- Put the URL pattern what you want to protect-->
 
-         <filter-mapping>
-             <filter-name>loginFilter</filter-name>
-             <servlet-name>user</servlet-name>
-         </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <servlet-name>user</servlet-name>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>login</servlet-name>
@@ -45,12 +44,20 @@
         <servlet-name>user</servlet-name>
         <servlet-class>net.therap.controller.UserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FoodRatingController</servlet-name>
+        <servlet-class>net.therap.controller.FoodRatingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FoodRatingController</servlet-name>
+        <url-pattern>/foodrating</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>user</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
 
-        <welcome-file-list>
+    <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
@@ -65,5 +72,8 @@
             <taglib-location>/WEB-INF/fmt.tld</taglib-location>
         </taglib>
     </jsp-config>
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 
 </web-app>

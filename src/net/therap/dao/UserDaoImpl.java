@@ -54,7 +54,9 @@ public class UserDaoImpl implements UserDao {
         }
         user.setFullName(userName);
         user.setPhoneNumber("+8801717449838");
+        user.setUserName(userName);
         user.setPassword(userPassword);
+       // con.close();
         return user;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -89,8 +91,10 @@ public class UserDaoImpl implements UserDao {
         }
         user.setId(userId);
         user.setFullName(userName);
+        user.setUserName(userName);
         user.setPhoneNumber("+8801717449838");
         user.setPassword(userPassword);
+       // con.close();
         return user;
     }
 }

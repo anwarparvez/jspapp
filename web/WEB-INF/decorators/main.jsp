@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -35,6 +36,19 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Email Us</a></li>
+                    <c:if test="${user==null}">
+
+                    </c:if>
+                    <c:choose>
+                        <c:when test="${user==null}">
+                            <li><a href="login">Log In</a></li>
+                        </c:when>
+                        <c:when test="${user!=null}">
+                            <li><a href="login">Log out</a></li>
+                        </c:when>
+                    </c:choose>
+
+
                 </ul>
             </div>
         </div>
@@ -70,7 +84,7 @@
             <div class="rightpanel">
                 <div class="rightbody">
                     <h1 class="title">Welcome to our website</h1>
-                      <decorator:body/>
+                    <decorator:body/>
 
                 </div>
             </div>
@@ -79,7 +93,6 @@
         <%@ include file="footer.jsp" %>
     </div>
 </div>
-
 
 
 </body>
