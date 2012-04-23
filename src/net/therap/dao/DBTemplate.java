@@ -25,16 +25,13 @@ public class DBTemplate {
             System.out.print("Connected\n");
 
             log.debug("Connection ok");
-            if(con!=null)
-            return true;
+            if (con != null)
+                return true;
             else
-                  return false;
+                return false;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
 
     public OracleConnection openConnection(String className, String url, String userName, String Password) {

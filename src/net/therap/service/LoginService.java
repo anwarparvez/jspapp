@@ -1,5 +1,9 @@
 package net.therap.service;
 
+import net.therap.dao.UserDao;
+import net.therap.dao.UserDaoImpl;
+import net.therap.domain.User;
+
 /**
  * Created by IntelliJ IDEA.
  * User: parvez
@@ -8,11 +12,20 @@ package net.therap.service;
  * To change this template use File | Settings | File Templates.
  */
 public class LoginService {
-        public boolean authenticate(String userName, String password) {
-        if (password != null && password != "") {
-            return true;
-        } else {
-            return false;
+    public User authenticate(String userName, String password) {
+        User user = null;
+        UserDao userDao = new UserDaoImpl();
+        try {
+            user = userDao.getUserByUserName(userName);
+            if (password.equals(user.getPassword()))
+                return user;
+            else {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            return null;
         }
+
     }
 }

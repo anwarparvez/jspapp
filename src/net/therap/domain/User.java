@@ -20,6 +20,8 @@ public class User {
     private boolean deleted;
 
     public User() {
+        id=-1;
+        admin=false;
     }
 
 
@@ -27,7 +29,7 @@ public class User {
         return id;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
