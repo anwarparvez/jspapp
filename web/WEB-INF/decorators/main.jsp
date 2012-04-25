@@ -31,9 +31,9 @@
                                          width="800"></div>
             <div class="topmenu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="user">Home</a></li>
+                    <li><a href="vote">vote</a></li>
+                    <li><a href="result">Result</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Email Us</a></li>
                     <c:choose>
@@ -53,8 +53,8 @@
             <div class="leftpanel">
                 <h2>Main Menu</h2>
                 <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
+                    <li><a href="vote">vote</a></li>
+                    <li><a href="result">Result</a></li>
                     <li><a href="#">Link 3</a></li>
                     <li><a href="#">Link 4</a></li>
                     <li><a href="#">Link 5</a></li>

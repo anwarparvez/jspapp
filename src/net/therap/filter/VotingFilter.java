@@ -30,9 +30,15 @@ public class VotingFilter implements Filter {
         User user = (User) session.getAttribute("user");
         FoodVotingService foodVotingService = new FoodVotingService();
         if (!foodVotingService.votingAccess(user)) {
-            log.debug("user is not logged in");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/foodvoting/success.jsp");
-            requestDispatcher.forward(request, response);
+            if (user.isAdmin()) {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/foodvoting/result.jsp");
+                requestDispatcher.forward(request, response);
+            } else {
+
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/foodvoting/success.jsp");
+                requestDispatcher.forward(request, response);
+
+            }
         }
         chain.doFilter(request, response);
     }

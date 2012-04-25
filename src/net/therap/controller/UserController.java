@@ -16,7 +16,6 @@ public class UserController extends
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String servletPath = req.getRequestURL().toString();
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/jsp/user/show.jsp");
         requestDispatcher.forward(req, resp);
     }

@@ -5,10 +5,13 @@
 <html>
 <head><title><fmt:message key="login.title"/></title></head>
 <body>
-  <form action="login" method="post">
-    <span> User Name</span> <input name="userName"/> <br/>
-    <span> Password</span> <input name="password"/> <br/>
-    <input type="submit" value="Login"/>
+<form action="login" method="post">
+    <fieldset>
+        <legend>Log In</legend>
+        <span> User Name</span> <input name="userName" type="text"/> <br/>
+        <span> Password</span> <input name="password" type="password"/> <br/>
+        <input type="submit" value="Login"/>
+    </fieldset>
 </form>
 </body>
 </html>

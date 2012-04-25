@@ -4,7 +4,7 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-<form method="post" action="foodrating">
+<form method="post" action="vote">
     <fieldset>
         <legend><h2>Food Voting </h2></legend>
 

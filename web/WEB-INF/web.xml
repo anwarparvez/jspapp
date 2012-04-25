@@ -22,7 +22,7 @@
         <filter-name>loginFilter</filter-name>
         <filter-class>net.therap.filter.LoginFilter</filter-class>
     </filter>
-        <filter>
+    <filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>net.therap.filter.AdminFilter</filter-class>
     </filter>
@@ -73,13 +73,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>FoodVotingController</servlet-name>
-        <url-pattern>/foodrating</url-pattern>
+        <url-pattern>/vote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FoodVotingController</servlet-name>
+        <url-pattern>/result</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>user</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

@@ -20,6 +20,7 @@ import java.io.IOException;
  */
 public class FoodVotingController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         FoodVotingService foodVotingService = new FoodVotingService();
         String foodID = request.getParameter("food_id");
         if (foodID != null) {
@@ -40,7 +41,6 @@ public class FoodVotingController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
         FoodVotingService foodRatingService = new FoodVotingService();
         request.setAttribute("foodList", foodRatingService.getFoodList());
