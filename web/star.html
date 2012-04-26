@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+    <title>Jquery simple rating system with small stars-jquery
+        Plugin</title>
+    <script type="text/javascript" src="star/jquery.js"></script>
+</head>
+<body>
+<link
+        href="star/rating_simple.css"
+        rel="stylesheet" type="text/css"/>
+<h2>
+    <script type="text/javascript" src="star/rating_simple.js"></script>
+    Demo1(input type is text)<br><br>
+    <input name="my_input" value=""
+           id="rating_simple1" type="text"/><br/><br/>
+    Demo2(input type is hidden)<br><br>
+    <input name="my_input" value=""
+           id="rating_simple2" type="hidden"/><br><br>
+    Demo3(function response)<br><br>
+    <input name="my_input" value="7"
+           id="rating_simple3" type="hidden"/><br><br>
+</h2>
+
+
+<script language="javascript" type="text/javascript">
+    function test(value) {
+        alert("This rating's value is " + value);
+    }
+    $(function() {
+        $("#rating_simple1").webwidget_rating_simple({
+            rating_star_length: '5',
+            rating_initial_value: '2',
+            rating_function_name: '',//this is function name for click
+            directory: 'star/'
+        });
+        $("#rating_simple2").webwidget_rating_simple({
+            rating_star_length: '10',
+            rating_initial_value: '5',
+            rating_function_name: '',//this is function name for click
+            directory: 'star/'
+        });
+        $("#rating_simple3").webwidget_rating_simple({
+            rating_star_length: '10',
+            rating_initial_value: '5',
+            rating_function_name: 'test',//this is function name for click
+            directory: 'star/'
+        });
+    });
+</script>
+</body>
+</html>

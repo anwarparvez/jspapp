@@ -31,7 +31,7 @@ public class AdminFilter implements Filter {
         if (user.isAdmin()) {
             log.debug("Admin Filter Using");
             UserService userService = new UserServiceImpl();
-            Map<String, Integer> voteMap = userService.getVoteMap();
+            Map<String, Float> voteMap = userService.getVoteMap();
             session.setAttribute("voteMap", voteMap);
             log.debug("My Map " + voteMap.toString());
         }

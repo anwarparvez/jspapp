@@ -10,6 +10,6 @@ import java.util.Map;
  * @author misbah
  */
 public interface UserService {
-    public Map<String, Integer> getVoteMap() ;
+    public Map<String, Float> getVoteMap() ;
 
 }

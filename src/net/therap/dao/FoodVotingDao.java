@@ -63,7 +63,7 @@ public class FoodVotingDao {
     public Map<String, Integer> getResultByResult(Date date) throws Exception {
         Map<String, Integer> votMap=new HashMap<String,Integer>();
         String selectString =
-                "select count(*) as vote,FOOD_NAME FROM SP_FOOD_RANKING ,SP_FOOD where VOTING_DATE= ? " +
+                "select avg(ranking) as vote,FOOD_NAME FROM SP_FOOD_RANKING ,SP_FOOD where VOTING_DATE= ? " +
                         "and SP_FOOD_RANKING.food_id= sp_food.food_id group by FOOD_Name";
            log.debug(selectString);
         Connection con = DbConnectionProvider.getConnection();
@@ -74,6 +74,24 @@ public class FoodVotingDao {
         while (rs.next()) {
             //int user_id = rs.getInt(1);
              votMap.put(rs.getString(2),new Integer(rs.getInt(1)));
+            log.debug("Voting ID=" + rs.getInt(1));
+        }
+        return votMap;
+    }
+        public Map<String, Float> getResultByDate(Date date) throws Exception {
+        Map<String, Float> votMap=new HashMap<String, Float>();
+        String selectString =
+                "select avg(ranking) as vote,FOOD_NAME FROM SP_FOOD_RANKING ,SP_FOOD where VOTING_DATE= ? " +
+                        "and SP_FOOD_RANKING.food_id= sp_food.food_id group by FOOD_Name";
+           log.debug(selectString);
+        Connection con = DbConnectionProvider.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(selectString);
+        pstmt.setDate(1, date);
+        ResultSet rs = pstmt.executeQuery();
+        // extract data from the ResultSet
+        while (rs.next()) {
+            //int user_id = rs.getInt(1);
+             votMap.put(rs.getString(2),rs.getFloat(1));
             log.debug("Voting ID=" + rs.getInt(1));
         }
         return votMap;
