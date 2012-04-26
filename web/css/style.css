@@ -30,8 +30,14 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
     float: left;
 }
 
+.header-img {
+    padding-top: 14px;
+    padding-bottom: 5px;
+}
+
 .topmenu {
-    background-color: #000000;
+    background-color: black;
+    border-radius: 10px;
     width: 800px;
     height: 50px;
     float: left;
@@ -67,6 +73,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
 
 .content {
     width: 800px;
+    min-height:300px;
     float: left;
 }
 
@@ -144,6 +151,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
     background-image: url(../images/footer.jpg);
     background-repeat: no-repeat;
     background-position: left top;
+    border-radius: 10px;
     width: 800px;
     height: 77px;
     float: left;

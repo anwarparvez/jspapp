@@ -20,22 +20,21 @@
 
         }
     </style>
-
 </head>
 
 <body bgcolor="#F5FFFF">
 <div class="main">
     <div class="page">
         <div class="header">
-            <div class="header-img"><img src="images/header.jpg" alt="" height="170"
+            <div class="header-img"><img src="images/header3.jpg" alt="" height="220"
                                          width="800"></div>
             <div class="topmenu">
                 <ul>
                     <li><a href="user">Home</a></li>
-                    <li><a href="vote">vote</a></li>
+                    <li><a href="vote">Vote</a></li>
                     <li><a href="result">Result</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Email Us</a></li>
+                    <%--<li><a href="#">About Us</a></li>
+                    <li><a href="#">Email Us</a></li>--%>
                     <c:choose>
                         <c:when test="${user==null}">
                             <li><a href="login">Log In</a></li>
@@ -44,8 +43,6 @@
                             <li><a href="login">Log out</a></li>
                         </c:when>
                     </c:choose>
-
-
                 </ul>
             </div>
         </div>
@@ -53,29 +50,13 @@
             <div class="leftpanel">
                 <h2>Main Menu</h2>
                 <ul>
-                    <li><a href="vote">vote</a></li>
-                    <li><a href="result">Result</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                    <li><a href="#">Link 5</a></li>
-                    <li><a href="#">Link 6</a></li>
-                    <li><a href="#">Link 7</a></li>
-                    <li><a href="#">Link 8</a></li>
-                    <li><a href="#">Link 9</a></li>
-                    <li><a href="#">Link 10</a></li>
-                </ul>
-                <h2>Resources</h2>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                    <li><a href="#">Link 5</a></li>
-                    <li><a href="#">Link 6</a></li>
-                    <li><a href="#">Link 7</a></li>
-                    <li><a href="#">Link 8</a></li>
-                    <li><a href="#">Link 9</a></li>
-                    <li><a href="#">Link 10</a></li>
+                    <li><a href="user">Home</a></li>
+                    <c:if test="${user!=null}">
+                        <li><a href="vote">Vote</a></li>
+                        <c:if test="${user.admin==true}">
+                            <li><a href="result">Result</a></li>
+                        </c:if>
+                    </c:if>
                 </ul>
             </div>
             <div class="rightpanel">
@@ -86,12 +67,8 @@
                 </div>
             </div>
         </div>
-
         <%@ include file="footer.jsp" %>
     </div>
 </div>
-
-
 </body>
-
 </html>

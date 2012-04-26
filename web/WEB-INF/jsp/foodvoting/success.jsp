@@ -4,5 +4,6 @@
 <head><title>Simple jsp page</title></head>
 <body>
 You have already voted for food!!!
+
 </body>
 </html>
