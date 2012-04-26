@@ -22,13 +22,15 @@ public class FoodVotingController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         FoodVotingService foodVotingService = new FoodVotingService();
-        String foodID = request.getParameter("food_id");
-        if (foodID != null) {
-            int food_id = Integer.parseInt(foodID);
-            HttpSession session = ((HttpServletRequest) request).getSession(false);
+        String food_vote = request.getParameter("food_vote");
+                HttpSession session = ((HttpServletRequest) request).getSession(false);
             User user = (User) session.getAttribute("user");
-            foodVotingService.setRating(user, food_id);
-
+        if (food_vote != null) {
+            String vote_list[]=request.getParameterValues("food_vote");
+             int food_id=1;
+            for(String foodVote:vote_list){
+            foodVotingService.setRating(user, food_id++,Integer.parseInt(foodVote));
+            }
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/foodvoting/success.jsp");
             requestDispatcher.forward(request, response);
 

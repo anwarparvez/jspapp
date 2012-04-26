@@ -42,6 +42,19 @@ public class FoodVotingService {
         }
     }
 
+    public void setRating(User user, int foodId, int vote) {
+        FoodVotingDao foodVotingDao = new FoodVotingDao();
+        FoodVoting foodVoting = new FoodVoting();
+        foodVoting.setFoodId(foodId);
+        foodVoting.setRanking(vote);
+        foodVoting.setUserId(user.getId());
+        try {
+            foodVotingDao.insert(foodVoting);
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
     public boolean votingAccess(User user) {
         java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
         FoodVotingDao foodVotingDao = new FoodVotingDao();

@@ -11,6 +11,7 @@
     <decorator:head/>
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript" src="star/jquery.js"></script>
     <style type="text/css">
         div.foot {
             align: center;
