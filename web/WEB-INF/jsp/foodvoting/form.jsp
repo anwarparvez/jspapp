@@ -13,27 +13,24 @@
     <fieldset>
         <legend><h2>Food Voting </h2></legend>
 
-        <label>Select Food</label>
-        <table>
-            <tr><td>Food Name</td><td>Vote</td></tr>
+        <table border="1" >
+            <tbody>
+            <tr>
+                <td>Food Name</td>
+                <td>Vote</td>
+            </tr>
             <c:forEach var="food" items="${foodList}">
                 <tr>
                     <td>${food.foodName}</td>
-                    <td><input name="food_vote" value=""
-                               id="rating_${food.foodName}" type="hidden"/></td>
-
+                    <td><input name="food_vote" value="" id="rating_${food.foodName}" type="hidden"/></td>
                 </tr>
             </c:forEach>
+            </tbody>
         </table>
 
-
         <option value="${food.foodId}"><c:out value="${food.foodName}"/></option>
-
-
         <br>
         <input type="submit" value="vote">
-
-
     </fieldset>
 
 </form>
@@ -45,8 +42,8 @@
     $(function() {
         <c:forEach var="food" items="${foodList}">
         $("#rating_${food.foodName}").webwidget_rating_simple({
-            rating_star_length: '10',
-            rating_initial_value: '5',
+            rating_star_length: '5',
+            rating_initial_value: '3',
             rating_function_name: '',//this is function name for click
             directory: 'star/'
         });
