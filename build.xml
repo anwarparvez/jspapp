@@ -63,7 +63,7 @@
         <delete dir="${build.dir}"/>
     </target>
 
-    <target name="build" depends="clean, resources, compile"/>
+    <target name="build" depends="stop, clean, resources, compile, start"/>
 
     <target name="start">
         <exec executable="${tomcat.home}/bin/catalina.sh">

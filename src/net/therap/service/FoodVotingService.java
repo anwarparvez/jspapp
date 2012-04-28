@@ -7,7 +7,10 @@ import net.therap.dao.FoodVotingDao;
 import net.therap.domain.Food;
 import net.therap.domain.FoodVoting;
 import net.therap.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,12 +22,14 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class FoodVotingService {
+    public static Logger log= LoggerFactory.getLogger(FoodVotingService.class) ;
     public List<Food> getFoodList() {
         FoodDao foodDao = new FoodDaoImpl();
         List<Food> foodList = null;
         try {
-            return foodList = foodDao.getFoodList();
+            return foodDao.getFoodList();
         } catch (Exception e) {
+            log.debug("Empty List"+e);
             return new ArrayList<Food>();
         }
     }

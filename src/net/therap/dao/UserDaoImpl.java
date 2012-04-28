@@ -26,19 +26,18 @@ public class UserDaoImpl implements UserDao {
 
         User user = new User();
         ResultSet rs = null;
-        PreparedStatement selectUser = null;
+        PreparedStatement preparedStatement = null;
         String userPassword = null;
         String userType = null;
         String userName = null;
 
-        String selectString =
+        String queryString =
                 "select * FROM SP_USER " +
                         " where USER_ID = ?";
-        Connection con = DbConnectionProvider.getConnection();
-        selectUser = con.prepareStatement(selectString);
-        selectUser.setInt(1, userId);
+        preparedStatement = DbConnectionProvider.getConnection().prepareStatement(queryString);
+        preparedStatement.setInt(1, userId);
 
-        rs = selectUser.executeQuery();
+        rs = preparedStatement.executeQuery();
         // extract data from the ResultSet
         while (rs.next()) {
             int user_id = rs.getInt(1);
@@ -56,26 +55,27 @@ public class UserDaoImpl implements UserDao {
         user.setPhoneNumber("+8801717449838");
         user.setUserName(userName);
         user.setPassword(userPassword);
-       // con.close();
+        preparedStatement.close();
+        DbConnectionProvider.closeConnection();
         return user;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public User getUserByUserName(String userName) throws Exception {
         User user = new User();
         ResultSet rs = null;
-        PreparedStatement selectUser = null;
+        PreparedStatement preparedStatement = null;
         String userPassword = null;
         String userType = null;
         int userId = -1;
 
-        String selectString;
-        selectString = "select * FROM SP_USER " +
+        String queryString;
+        queryString = "select * FROM SP_USER " +
                 " where USER_Name = ?";
-        Connection con = DbConnectionProvider.getConnection();
-        selectUser = con.prepareStatement(selectString);
-        selectUser.setString(1, userName);
 
-        rs = selectUser.executeQuery();
+        preparedStatement = DbConnectionProvider.getConnection().prepareStatement(queryString);
+        preparedStatement.setString(1, userName);
+
+        rs = preparedStatement.executeQuery();
         while (rs.next()) {
             userId = rs.getInt(1);
             String user_Name = rs.getString(2);
@@ -94,7 +94,8 @@ public class UserDaoImpl implements UserDao {
         user.setUserName(userName);
         user.setPhoneNumber("+8801717449838");
         user.setPassword(userPassword);
-       // con.close();
+        preparedStatement.close();
+        DbConnectionProvider.closeConnection();
         return user;
     }
 }

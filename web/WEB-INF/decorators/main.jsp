@@ -5,24 +5,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <html>
-
-<head>
-    <title><decorator:title default="INTRANET"/></title>
-    <decorator:head/>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-
-    <script type="text/javascript" src="star/jquery.js"></script>
-    <style type="text/css">
-        div.foot {
-            align: center;
-            background-color: #ffffcc;
-            width: 100%;
-            height: 60px;
-
-        }
-    </style>
-</head>
-
+<%@ include file="header.jsp" %>
 <body bgcolor="#F5FFFF">
 <div class="main">
     <div class="page">
@@ -64,7 +47,6 @@
                 <div class="rightbody">
                     <h1 class="title">Welcome to our website</h1>
                     <decorator:body/>
-
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 package net.therap.filter;
 
 import net.therap.domain.User;
-import net.therap.service.UserService;
-import net.therap.service.UserServiceImpl;
+import net.therap.service.IVoteService;
+import net.therap.service.VoteServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,11 +30,14 @@ public class AdminFilter implements Filter {
         User user = (User) session.getAttribute("user");
         if (user.isAdmin()) {
             log.debug("Admin Filter Using");
-            UserService userService = new UserServiceImpl();
+            IVoteService userService = new VoteServiceImpl();
             Map<String, Float> voteMap = userService.getVoteMap();
             session.setAttribute("voteMap", voteMap);
             log.debug("My Map " + voteMap.toString());
-        }
+        }else
+           log.warn("sdfhsdjkfsdh");
+
+
         chain.doFilter(req, resp);
     }
 

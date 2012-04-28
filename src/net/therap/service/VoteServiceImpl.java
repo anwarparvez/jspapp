@@ -12,7 +12,7 @@ import java.util.Map;
  * Time: 6:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UserServiceImpl implements UserService {
+public class VoteServiceImpl implements IVoteService {
     public Map<String, Float> getVoteMap() {
         FoodVotingDao foodVotingDao = new FoodVotingDao();
         java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());

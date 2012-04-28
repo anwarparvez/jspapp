@@ -26,13 +26,13 @@ public class FoodDaoImpl implements FoodDao {
     public List<Food> getFoodList() throws Exception {
         List<Food> foods = new ArrayList<Food>();
         ResultSet rs;
-        PreparedStatement selectFoods;
-        String selectString = "select * FROM SP_FOOD ";
+        PreparedStatement preparedStatement;
 
-        Connection con = DbConnectionProvider.getConnection();
-        selectFoods = con.prepareStatement(selectString);
-        rs = selectFoods.executeQuery();
-        log.debug("Food List");
+        String query = "select * FROM SP_FOOD ";
+        preparedStatement = DbConnectionProvider.getConnection().prepareStatement(query);
+       // log.debug("preparedStatement open");
+        rs = preparedStatement.executeQuery();
+       // log.debug("Food List");
         // extract data from the ResultSet
         while (rs.next()) {
             int foodId = rs.getInt(1);
@@ -46,7 +46,9 @@ public class FoodDaoImpl implements FoodDao {
             foods.add(food);
             log.debug(foodId + "\t" + foodName + "\t" + foodType);
         }
-        //con.close();
+        preparedStatement.close();
+       // log.debug("Connection closed");
+        DbConnectionProvider.closeConnection();
         return foods;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

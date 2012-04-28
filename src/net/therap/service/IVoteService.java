@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * @author misbah
  */
-public interface UserService {
+public interface IVoteService {
     public Map<String, Float> getVoteMap() ;
 
 }

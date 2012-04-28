@@ -18,7 +18,7 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class VotingFilter implements Filter {
-    private static final Logger log = LoggerFactory.getLogger(LoginFilter.class);
+
 
     public void init(FilterConfig filterConfig) throws ServletException {
         //To change body of implemented methods use File | Settings | File Templates.
