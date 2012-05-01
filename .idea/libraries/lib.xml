@@ -1,18 +1,15 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.5.8.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jstl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/ojdbc14-10.2.0.4.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/standard.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.5.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/sitemesh-2.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ojdbc14-10.2.0.4.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.14.jar!/" />
-      <root url="file:///usr/local/tomcat6/lib" />
-      <root url="file:///usr/local/tomcat6/lib" />
+      <root url="jar://$PROJECT_DIR$/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.5.8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file:///usr/local/tomcat6/lib" recursive="false" />
   </library>
 </component>

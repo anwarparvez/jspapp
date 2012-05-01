@@ -14,6 +14,7 @@
     <property name="props.dir" value="${basedir}/props"/>
     <property name="i18n.dir" value="${basedir}/i18n"/>
     <property name="db.dir" value="${basedir}/db"/>
+    <property name="aspectj.home" value="/usr/local/aspectj"/>
 
     <property name="tomcat.lib" value="${tomcat.home}/lib"/>
 
@@ -53,10 +54,17 @@
         </copy>
     </target>
 
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+        <classpath refid="classpath"/>
+    </taskdef>
     <target name="compile" depends="init">
-        <javac destdir="${classes.dir}"
+<!--       <javac destdir="${classes.dir}"
                classpathref="classpath"
-               srcdir="${src.dir}"/>
+               srcdir="${src.dir}"/>-->
+        <iajc destdir="${classes.dir}"
+               classpathref="classpath"
+               srcdir="${src.dir}" target="1.5" source="1.5"/>
+
     </target>
 
     <target name="clean">
